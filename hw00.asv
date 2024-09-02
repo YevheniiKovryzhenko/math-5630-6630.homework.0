@@ -33,9 +33,9 @@ classdef hw00
                     otherwise
                         for i = 3:m
                             a_m = a_2 + a_1 + a_0;
-                            a_0 = a_1;
-                            a_1 = a_2;
                             a_2 = a_m;
+                            a_1 = a_2;
+                            a_0 = a_1;
                         end
                 end
             end
@@ -50,19 +50,16 @@ classdef hw00
             if size(A,1) ~= size(A,2)
                 error('A must be a square matrix')
             else
+                % det_A = inf;% Write your code here, note when you call p2 function inside your function, you need to call it like this: hw00.p2(B), where B is a matrix.
+                % det_A = det(A); %lol
                 n = length(A);
-                if n > 1
-                    det_A = 0;
-                    ids = 1:n;
-                    for i = 1:n
-                        Ai1 = A(i,1);
-                        if Ai1 ~= 0
-                            Bi1 = A(ids~=i,2:end);
-                            det_A = det_A + (-1)^(i+1)*Ai1*hw00.p2(Bi1);
-                        end
+                det_A = 0;
+                for i = 1:n
+                    Ai1 = A(i,1);
+                    if Ai1 ~= 0
+                        Bi1 = 
+                        det_A = det_A + (-1)^(i+1)*det()
                     end
-                else
-                    det_A = A;
                 end
             end
         end
@@ -72,7 +69,6 @@ classdef hw00
             % :return: no returns
 
             % Write your code here
-            pause(1)
         end
     end
 end
